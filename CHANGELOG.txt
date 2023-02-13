@@ -1,0 +1,32 @@
+Changelog
+=========
+
+## Version 1.0.2
+- Sound effects and countdown
+
+## Version 1.0.1
+- New filters
+  - Fancy 2
+  - Foggy retro
+  - Party edges
+    - Edge thickness
+- Bug fixes
+
+## Version 1.0.0
+- Actions
+  - Save image
+- Rotation
+- Filters
+  - Grey
+  - Blur
+  - Invert
+  - Fancy
+  - Switch Red and Blue
+- Number of images
+  - 1, 4, 9, 12 and 16
+- Effects
+  - Mirror
+  - Many
+  - Flip horizontally
+  - Flip vertically
+  - Flip horizontally and vertically

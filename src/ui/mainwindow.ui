@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>848</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Snapshot</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="OpenCVViewer" name="widget_img" native="true">
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonSnap">
+        <property name="styleSheet">
+         <string notr="true">QPushButton:enabled {
+background-color: rgb(233, 46, 31);
+color: #FFFFFF;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+min-width: 1em;
+padding: 6px;
+}
+QPushButton:hover {
+background-color: rgb(255, 78, 0);
+color: #FFFFFF;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+min-width: 1em;
+padding: 6px;
+}
+QPushButton:disabled {
+background-color: rgb(233, 46, 31);
+color: #FFFFFF;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: beige;
+font: bold 14px;
+min-width: 1em;
+padding: 6px;
+}
+QPushButton:pressed {
+background-color: rgb(215, 24, 8);
+color: #FFFFFF;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: rgb(211, 211, 211);
+font: bold 14px;
+min-width: 1em;
+padding: 6px;
+border-style: inset;
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Rotation: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="sliderRotate">
+          <property name="maximum">
+           <number>360</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
+          <property name="tickInterval">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Party edges: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="sliderPartyEdges">
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>15</number>
+          </property>
+          <property name="singleStep">
+           <number>1</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
+          <property name="tickInterval">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Edge thickness: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="sliderEdgeThickness">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>20</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
+          <property name="tickInterval">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>848</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSnapshot">
+    <property name="title">
+     <string>Snapshot</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuFilter">
+    <property name="title">
+     <string>Filters</string>
+    </property>
+    <addaction name="actionGrey"/>
+    <addaction name="actionBlur"/>
+    <addaction name="actionInvert"/>
+    <addaction name="actionFancy1"/>
+    <addaction name="actionFancy2"/>
+    <addaction name="actionFoggyRetro"/>
+    <addaction name="actionSwitchRB"/>
+    <addaction name="separator"/>
+    <addaction name="actionResetFilters"/>
+   </widget>
+   <widget class="QMenu" name="menuActions">
+    <property name="title">
+     <string>Actions</string>
+    </property>
+    <addaction name="actionSaveImage"/>
+    <addaction name="separator"/>
+    <addaction name="actionResetAll"/>
+   </widget>
+   <widget class="QMenu" name="menuNumber_of_images">
+    <property name="title">
+     <string>Number of images</string>
+    </property>
+    <addaction name="action1_image"/>
+    <addaction name="action4_images"/>
+    <addaction name="action9_images"/>
+    <addaction name="action12_images"/>
+    <addaction name="action16_images"/>
+    <addaction name="separator"/>
+    <addaction name="actionResetNumberOfImages"/>
+   </widget>
+   <widget class="QMenu" name="menuEffects">
+    <property name="title">
+     <string>Effects</string>
+    </property>
+    <addaction name="actionMirror"/>
+    <addaction name="actionMany"/>
+    <addaction name="separator"/>
+    <addaction name="actionFlipHorizontally"/>
+    <addaction name="actionFlipVertically"/>
+    <addaction name="actionFlipHorizontallyAndVertically"/>
+    <addaction name="separator"/>
+    <addaction name="actionResetEffects"/>
+   </widget>
+   <addaction name="menuSnapshot"/>
+   <addaction name="menuActions"/>
+   <addaction name="menuFilter"/>
+   <addaction name="menuEffects"/>
+   <addaction name="menuNumber_of_images"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionStart">
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </action>
+  <action name="actionGrey">
+   <property name="text">
+    <string>Grey</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+1</string>
+   </property>
+  </action>
+  <action name="actionBlur">
+   <property name="text">
+    <string>Blur</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+2</string>
+   </property>
+  </action>
+  <action name="actionInvert">
+   <property name="text">
+    <string>Invert</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+3</string>
+   </property>
+  </action>
+  <action name="actionMirror">
+   <property name="text">
+    <string>Mirror</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+Q</string>
+   </property>
+  </action>
+  <action name="actionMany">
+   <property name="text">
+    <string>Many</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+W</string>
+   </property>
+  </action>
+  <action name="actionFancy1">
+   <property name="text">
+    <string>Fancy 1</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+4</string>
+   </property>
+  </action>
+  <action name="actionSwitchRB">
+   <property name="text">
+    <string>Switch Red and Blue</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+7</string>
+   </property>
+  </action>
+  <action name="actionResetFilters">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </action>
+  <action name="actionSaveImage">
+   <property name="text">
+    <string>Save image</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action1_image">
+   <property name="text">
+    <string>1 image</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="action4_images">
+   <property name="text">
+    <string>4 images</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="action9_images">
+   <property name="text">
+    <string>9 images</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+3</string>
+   </property>
+  </action>
+  <action name="action12_images">
+   <property name="text">
+    <string>12 images</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+4</string>
+   </property>
+  </action>
+  <action name="action16_images">
+   <property name="text">
+    <string>16 images</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+5</string>
+   </property>
+  </action>
+  <action name="actionResetNumberOfImages">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </action>
+  <action name="actionResetAll">
+   <property name="text">
+    <string>Reset all</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Del</string>
+   </property>
+  </action>
+  <action name="actionFlipHorizontally">
+   <property name="text">
+    <string>Flip horizontally</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+E</string>
+   </property>
+  </action>
+  <action name="actionFlipVertically">
+   <property name="text">
+    <string>Flip vertically</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+R</string>
+   </property>
+  </action>
+  <action name="actionFlipHorizontallyAndVertically">
+   <property name="text">
+    <string>Flip horizontally and vertically</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+T</string>
+   </property>
+  </action>
+  <action name="actionResetEffects">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </action>
+  <action name="actionFancy2">
+   <property name="text">
+    <string>Fancy 2</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+5</string>
+   </property>
+  </action>
+  <action name="actionFoggyRetro">
+   <property name="text">
+    <string>Foggy retro</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+6</string>
+   </property>
+  </action>
+  <action name="actionPartyEdges">
+   <property name="text">
+    <string>Party edges</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>OpenCVViewer</class>
+   <extends>QWidget</extends>
+   <header>hcpp/opencvviewer.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/img">
+        <file alias="logo">img/logo.png</file>
+    </qresource>
+    <qresource prefix="/text">
+        <file alias="about">text/about.html</file>
+    </qresource>
+    <qresource prefix="/audio">
+        <file alias="dot">audio/dot.wav</file>
+        <file alias="snap">audio/snap.wav</file>
+    </qresource>
+</RCC>

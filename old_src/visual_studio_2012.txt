@@ -1,0 +1,42 @@
+Compiling with Visual Studio 2012
+---------------------------------
+
+1. Add the path to OpenCV runtime dlls to your Environment Path variable:
+C:\OpenCV-2.4.3\opencv\build\x64\vc10\bin;C:\OpenCV-2.4.3\opencv\build\common\tbb\intel64\vc10\;
+
+2. Create a new Visual Studio Project:
+Open Visual Studio -> New Project -> Visual C++ -> Win32 Console Application
+Application Type: Console application
+
+3. Change the Platform:
+Click on Win32, Select New
+Active solution platform: x64
+Copy settings from: Win32
+Configuration: Release
+Close the Configuration Manager.
+Change the configuration in the main window to Release, if it isn't that already.
+
+4. Add the OpenCV libraries to our OpenCV project properties:
+Right click on the project -> Properties -> Additional Library Directories
+
+5.1. Settings: Linker -> General:
+Add C:\OpenCV-2.4.3\opencv\build\x64\vc10\lib;
+
+5.2. Settings: Linker -> Input -> Additional Dependencies:
+opencv_core243.lib
+opencv_imgproc243.lib
+opencv_highgui243.lib
+opencv_ml243.lib
+opencv_video243.lib
+opencv_features2d243.lib
+opencv_calib3d243.lib
+opencv_objdetect243.lib
+opencv_contrib243.lib
+opencv_legacy243.lib
+opencv_flann243.lib
+
+5.3. Settings: C/C++ -> General -> Additional Include Directories:
+Add C:\OpenCV-2.4.3\opencv\build\include\opencv;C:\OpenCV-2.4.3\opencv\build\include;
+
+5.4. Settings: C/C++ -> Preprocessor -> Preprocessor Definitions
+Add _CRT_SECURE_NO_WARNINGS;
